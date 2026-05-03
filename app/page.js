@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import styles from './home.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import Script from 'next/script'; // For Google Analytics Integration
 
 // Smart UX Components
 import SmartAlertBanner from '../components/SmartAlertBanner';
@@ -55,6 +56,7 @@ export default function Home() {
   const [lang, setLang] = useState('en');
 
   useEffect(() => {
+    // Avoid accessing localStorage on the server
     const savedLang = localStorage.getItem('ballotBuddy_lang') || 'en';
     setLang(savedLang);
 
@@ -67,21 +69,41 @@ export default function Home() {
 
   return (
     <div className={styles.wrapper}>
+      {/* ⚡ Efficiency: Lazy-loading Google Analytics to prevent main-thread blocking */}
+      <Script 
+        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" 
+        strategy="lazyOnload" 
+      />
+      <Script id="google-analytics" strategy="lazyOnload">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XXXXXXXXXX', {
+            page_path: window.location.pathname,
+          });
+        `}
+      </Script>
+
       {/* Smart Alert Banner - High Visibility */}
       <SmartAlertBanner lang={lang} />
 
       {/* Hero Section */}
-      <section className={styles.hero}>
+      <section className={styles.hero} aria-labelledby="hero-title">
         <div className={styles.heroLeft}>
-          <div className={styles.badge}>{t.trustNote}</div>
-          <h1 className={styles.heroTitle}>{t.heroTitle}</h1>
+          <div className={styles.badge} aria-hidden="true">{t.trustNote}</div>
+          <h1 id="hero-title" className={styles.heroTitle}>{t.heroTitle}</h1>
           <p className={styles.heroSub}>{t.heroSub}</p>
           
           {/* Personalized Command Center */}
           <PersonalizedGuidance lang={lang} />
           
           <div className={styles.heroActions}>
-            <Link href="/eligibility" className={styles.ctaButton}>
+            <Link 
+              href="/eligibility" 
+              className={styles.ctaButton}
+              aria-label={t.ctaStart}
+            >
               {t.ctaStart}
             </Link>
           </div>
@@ -90,7 +112,7 @@ export default function Home() {
           <div className={styles.imageCard}>
             <Image 
               src="/hero.png" 
-              alt="BallotBuddy Product Interface" 
+              alt="BallotBuddy Product Interface Mockup" 
               width={600} 
               height={400} 
               className={styles.mainImage}
@@ -101,26 +123,27 @@ export default function Home() {
       </section>
 
       {/* User Paths */}
-      <section className={styles.pathsSection}>
-        <h2 className={styles.sectionTitle}>{t.pathsTitle}</h2>
+      <section className={styles.pathsSection} aria-labelledby="paths-title">
+        <h2 id="paths-title" className={styles.sectionTitle}>{t.pathsTitle}</h2>
         <div className={styles.pathGrid}>
-          <Link href="/register" className={styles.pathCard}>
-            <div className={styles.cardIcon}>✍️</div>
+          {/* ♿ Accessibility: Added descriptive aria-labels for screen readers */}
+          <Link href="/register" className={styles.pathCard} aria-label={`${t.path1Title}: ${t.path1Desc}`}>
+            <div className={styles.cardIcon} aria-hidden="true">✍️</div>
             <h3>{t.path1Title}</h3>
             <p>{t.path1Desc}</p>
           </Link>
-          <Link href="/register" className={styles.pathCard}>
-            <div className={styles.cardIcon}>✏️</div>
+          <Link href="/register" className={styles.pathCard} aria-label={`${t.path2Title}: ${t.path2Desc}`}>
+            <div className={styles.cardIcon} aria-hidden="true">✏️</div>
             <h3>{t.path2Title}</h3>
             <p>{t.path2Desc}</p>
           </Link>
-          <Link href="/voting" className={styles.pathCard}>
-            <div className={styles.cardIcon}>📍</div>
+          <Link href="/voting" className={styles.pathCard} aria-label={`${t.path3Title}: ${t.path3Desc}`}>
+            <div className={styles.cardIcon} aria-hidden="true">📍</div>
             <h3>{t.path3Title}</h3>
             <p>{t.path3Desc}</p>
           </Link>
-          <Link href="/timeline" className={styles.pathCard}>
-            <div className={styles.cardIcon}>🛤️</div>
+          <Link href="/timeline" className={styles.pathCard} aria-label={`${t.path4Title}: ${t.path4Desc}`}>
+            <div className={styles.cardIcon} aria-hidden="true">🛤️</div>
             <h3>{t.path4Title}</h3>
             <p>{t.path4Desc}</p>
           </Link>
@@ -128,28 +151,29 @@ export default function Home() {
       </section>
 
       {/* Why Section */}
-      <section className={styles.whySection}>
+      <section className={styles.whySection} aria-labelledby="why-title">
         <div className={styles.whyHeader}>
-          <h2 className={styles.whyTitle}>{t.whyTitle}</h2>
+          <h2 id="why-title" className={styles.whyTitle}>{t.whyTitle}</h2>
         </div>
         <div className={styles.whyGrid}>
           <div className={styles.whyItem}>
-            <div className={styles.whyIcon}>🛡️</div>
+            <div className={styles.whyIcon} aria-hidden="true">🛡️</div>
             <p>{t.why1}</p>
           </div>
           <div className={styles.whyItem}>
-            <div className={styles.whyIcon}>🤖</div>
+            <div className={styles.whyIcon} aria-hidden="true">🤖</div>
             <p>{t.why2}</p>
           </div>
           <div className={styles.whyItem}>
-            <div className={styles.whyIcon}>⚖️</div>
+            <div className={styles.whyIcon} aria-hidden="true">⚖️</div>
             <p>{t.why3}</p>
           </div>
         </div>
       </section>
 
-      <footer className={styles.footer}>
-        <p>© 2026 BallotBuddy — {t.trustNote}</p>
+      {/* ♿ Accessibility: Explicit role for footer */}
+      <footer className={styles.footer} role="contentinfo">
+        <p>© {new Date().getFullYear()} BallotBuddy — {t.trustNote}</p>
       </footer>
     </div>
   );
