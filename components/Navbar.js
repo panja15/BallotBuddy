@@ -54,7 +54,7 @@ export default function Navbar() {
   return (
     <nav style={styles.nav}>
       <div style={styles.container}>
-        <Link href="/" style={styles.logo}>
+        <Link href="/" style={styles.logo} aria-label="BallotBuddy Home">
           Ballot<span style={{ color: '#fff' }}>Buddy</span>
         </Link>
         
@@ -66,6 +66,7 @@ export default function Navbar() {
                 <li key={item.href}>
                   <Link 
                     href={item.href} 
+                    aria-current={isActive ? 'page' : undefined}
                     style={{
                       ...styles.link,
                       ...(isActive ? styles.activeLink : {})
@@ -79,7 +80,11 @@ export default function Navbar() {
             })}
           </ul>
 
-          <button onClick={toggleLang} style={styles.langToggle}>
+          <button 
+            onClick={toggleLang} 
+            style={styles.langToggle}
+            aria-label={`Switch to ${lang === 'en' ? 'Hindi' : 'English'}`}
+          >
             {t.langName}
           </button>
         </div>
