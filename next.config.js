@@ -13,6 +13,7 @@ const nextConfig = {
   images: {
     remotePatterns: [],
   },
+  output: 'standalone',
 };
 
 module.exports = nextConfig;
