@@ -1,0 +1,256 @@
+/* file: app/voting/voting.module.css */
+.wrapper {
+  background: linear-gradient(135deg, #0a0f1e 0%, #16213e 100%);
+  min-height: calc(100vh - 72px);
+  color: #fff;
+  padding-bottom: 5rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ffffff, #93c5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #94a3b8;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: #E2E8F0;
+}
+
+/* Booth Search */
+.searchCard {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 3rem;
+  border-radius: 24px;
+  margin-bottom: 4rem;
+}
+
+.searchQuestion {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #E2E8F0;
+}
+
+.searchBtns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.searchBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.searchBtnActive {
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* SEARCH RESULTS - FIXED CONTRAST */
+.aiInsightBox {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.aiLabel {
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: #60a5fa;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.aiInsightBox p {
+  color: #bfdbfe;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.actionBox {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.actionBox p {
+  color: #E2E8F0;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.eciLinkBtn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checklist h5 {
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.checklist ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checklist li {
+  font-weight: 600;
+  color: #E2E8F0;
+}
+
+.checklist li::before {
+  content: '→';
+  margin-right: 0.75rem;
+  color: #3b82f6;
+}
+
+/* Grid Sections */
+.section {
+  margin-bottom: 5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateY(-5px);
+}
+
+.card h4 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #E2E8F0;
+}
+
+.phaseDesc {
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.aiContextBox {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.aiContextLabel {
+  font-size: 0.65rem;
+  font-weight: 900;
+  color: #3b82f6;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.aiContextBox p {
+  font-size: 0.85rem;
+  color: #bfdbfe;
+  margin: 0;
+}
+
+/* Results Card */
+.resultsCard {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  padding: 4rem;
+  border-radius: 32px;
+  text-align: center;
+}
+
+.resultsCard p {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.ctaButton {
+  background: #fff;
+  color: #1e3a8a;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.disclaimer {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6) !important;
+  margin-top: 2rem !important;
+}
+
+.footer {
+  text-align: center;
+  opacity: 0.5;
+}
+
+.finalNote {
+  font-size: 0.85rem;
+}

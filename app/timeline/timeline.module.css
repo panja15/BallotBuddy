@@ -1,0 +1,417 @@
+/* file: app/timeline/timeline.module.css */
+.wrapper {
+  background: linear-gradient(135deg, #0a0f1e 0%, #16213e 100%);
+  min-height: calc(100vh - 72px);
+  color: #fff;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ffffff, #93c5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Status Banner */
+.statusBanner {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.statusItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.statusLabel {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+}
+
+.statusValue {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Journey List */
+.journey {
+  position: relative;
+}
+
+.journey::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #3b82f6, rgba(59, 130, 246, 0.1));
+}
+
+.stepItem {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.activeStep {
+  transform: scale(1.02);
+}
+
+.dimmedStep {
+  opacity: 0.5;
+}
+
+.stepNumber {
+  width: 42px;
+  height: 42px;
+  background: #1e293b;
+  border: 2px solid #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #3b82f6;
+  flex-shrink: 0;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.activeStep .stepNumber {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+}
+
+.stepContent {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2.5rem;
+  border-radius: 24px;
+  transition: all 0.3s ease;
+}
+
+.activeStep .stepContent {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.stepHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.itemTitle {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.statusBadge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.completed { background: rgba(34, 197, 94, 0.1); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.2); }
+.inprogress { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
+.upcoming { background: rgba(148, 163, 184, 0.1); color: #94a3b8; border: 1px solid rgba(148, 163, 184, 0.2); }
+
+.infoSection {
+  margin-bottom: 1.5rem;
+}
+
+.infoLabel {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.infoText {
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* User Control */
+.userControl {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.controlQuestion {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.controlBtns {
+  display: flex;
+  gap: 1rem;
+}
+
+.controlBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #fff;
+}
+
+.controlBtnActive {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* AI Insight */
+.aiInsightBox {
+  background: rgba(59, 130, 246, 0.05);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.aiLabel {
+  font-size: 0.7rem;
+  font-weight: 900;
+  color: #60a5fa;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.aiInsightBox p {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #93c5fd;
+  margin: 0;
+}
+
+/* Next Action Banner */
+.nextActionBanner {
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  padding: 4rem;
+  border-radius: 32px;
+  text-align: center;
+  margin-top: 4rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.nextActionLabel {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #93c5fd;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nextActionTitle {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 1.5rem 0 2.5rem 0;
+}
+
+.nextActionBtn {
+  display: inline-block;
+  background: #fff;
+  color: #1e3a8a;
+  padding: 1.2rem 3rem;
+  border-radius: 50px;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.nextActionBtn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.actionPrompt {
+  margin-top: 2rem;
+  color: #93c5fd;
+  font-size: 1rem;
+}
+
+/* Final Completion Card */
+.finalCard {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4rem;
+  border-radius: 40px;
+  text-align: center;
+  margin-top: 4rem;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.4);
+}
+
+.finalHeader {
+  margin-bottom: 3rem;
+}
+
+.bigCheck {
+  font-size: 5rem;
+  display: block;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4));
+}
+
+.finalTitle {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #4ade80, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.finalSub {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.finalChecklist {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2.5rem;
+  border-radius: 24px;
+  margin-bottom: 3rem;
+  text-align: left;
+  max-width: 500px;
+  margin: 2rem auto 3rem auto;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.finalChecklist h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #3b82f6;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.finalChecklist ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.finalChecklist li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.finalChecklist li::before {
+  content: '✓';
+  color: #4ade80;
+  font-weight: 900;
+}
+
+.finalActions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.actionBtnPrimary {
+  background: #3b82f6;
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+.actionBtnSecondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.actionBtnPrimary:hover, .actionBtnSecondary:hover {
+  transform: translateY(-3px);
+}
+
+.trustSection {
+  text-align: center;
+  margin-top: 4rem;
+  opacity: 0.5;
+}
+
+.trustLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+}

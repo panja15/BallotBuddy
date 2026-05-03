@@ -1,0 +1,12 @@
+/* file: components/formRenderer.module.css additions */
+.inputError {
+  border-color: #ef4444 !important;
+  background-color: #fffafb !important;
+}
+
+.errorMessage {
+  color: #ef4444;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}

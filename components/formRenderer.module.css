@@ -1,0 +1,131 @@
+/* file: components/formRenderer.module.css */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.section {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--primary);
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.labelArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.required {
+  color: #ef4444;
+  margin-left: 0.2rem;
+}
+
+.input, .select {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.input:focus, .select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* AI Help Button & Tooltip */
+.aiHelpBtn {
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.aiHelpBtn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.aiTooltip {
+  margin-top: 0.75rem;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.aiTooltip h5 {
+  color: #92400e;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.aiTooltip p {
+  color: #78350f;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.mistakeArea {
+  background: #fef2f2;
+  padding: 0.5rem;
+  border-radius: 6px;
+  color: #991b1b;
+  font-size: 0.8rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.mistakeArea::before {
+  content: '⚠️';
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

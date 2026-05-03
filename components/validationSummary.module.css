@@ -1,0 +1,94 @@
+/* file: components/validationSummary.module.css */
+.container {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 3rem;
+  animation: slideUp 0.5s ease-out;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  color: #E2E8F0;
+  letter-spacing: -0.2px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #94A3B8;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  letter-spacing: 1px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.statusIcon {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.error { color: #f87171; }
+.warning { color: #fbbf24; }
+.success { color: #4ade80; }
+
+/* Documents Section */
+.docsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.docBadge {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: #bfdbfe;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.docNote {
+  font-size: 0.75rem;
+  color: #94A3B8;
+  margin-top: 1.25rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

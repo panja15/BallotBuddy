@@ -1,0 +1,205 @@
+/* file: components/validityCheck.module.css */
+.container {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  padding: 3.5rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 4rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  opacity: 0.8;
+}
+
+.checkCard {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.questionGroup {
+  margin-bottom: 2.5rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.radioList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.radioCard {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.radioCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.selected {
+  background: rgba(59, 130, 246, 0.08);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.hiddenRadio {
+  display: none;
+}
+
+.radioCircle {
+  width: 22px;
+  height: 22px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.selected .radioCircle {
+  border-color: var(--primary);
+}
+
+.radioInner {
+  width: 10px;
+  height: 10px;
+  background: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.radioLabel {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Warning Box */
+.warningBox {
+  background: rgba(245, 158, 11, 0.05);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  padding: 1.75rem;
+  border-radius: 16px;
+  margin-bottom: 2.5rem;
+  animation: slideIn 0.4s ease-out;
+}
+
+.warningHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: #fbbf24;
+}
+
+.warningIcon { font-size: 1.2rem; }
+
+.riskDesc {
+  color: #fde68a;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.warningNote {
+  font-size: 0.8rem;
+  color: #94A3B8;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Action Section */
+.actionSection {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.readyText {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.btnGroup {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.primaryBtn {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.secondaryBtn {
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 1rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primaryBtn:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
