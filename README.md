@@ -1,4 +1,4 @@
-# 🗳️ BallotBuddy — Your Premium Election Companion
+# 🗳️ BallotBuddy — Your Premium Election Companion 
 
 BallotBuddy is a professional-grade, high-fidelity election assistant designed to guide Indian voters through the complex registration and voting process with confidence. Built with a focus on accessibility, clarity, and official accuracy, it transforms the "confusing" election cycle into a streamlined, state-aware journey.
 
