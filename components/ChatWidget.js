@@ -16,6 +16,7 @@ export default function ChatWidget() {
   const [lang, setLang] = useState('en');
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState('');
 
   useEffect(() => {
     const savedLang = localStorage.getItem('ballotBuddy_lang') || 'en';
